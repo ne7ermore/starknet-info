@@ -11,7 +11,7 @@ from rich.table import Table
 
 from wallet import *
 
-TX_MIN = 20
+TX_MIN = 10
 TX_MIDDLE = 25
 TX_MAX = 100
 RATIO = 5
