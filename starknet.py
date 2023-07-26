@@ -24,6 +24,7 @@ EMPTYCONTRACT = "0x01176a1bd84444c89232ec27754698e5d2e7e1a7f1539f12027f28b23ec9f
 base_columns = ["#", "eth", "usdc", "usdt", "dai", "tx", "最后交易", "day", "week", "mon", "金额", "fee"]
 
 CONTRACTZKSTASK = (
+    ["0x454f0bd015e730e5adbb4f080b075fdbf55654ff41ee336203aa2e1ac4d4309", "dmail"],
     ["0x04d0390b777b424e43839cd1e744799f3de6c176c7e32c1812a41dbd9c19db6a", "jiedi"],
     ["0x045e7131d776dddc137e30bdd490b431c7144677e97bf9369f629ed8d3fb7dd6", "jiedi"],        
     ["0x07e2a13b40fc1119ec55e0bcf9428eedaa581ab3c924561ad4e955f95da63138", "jiedi"],    
