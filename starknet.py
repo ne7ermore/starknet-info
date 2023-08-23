@@ -186,13 +186,17 @@ async def get_stark_anount_and_contracts(session, address):
 
 async def get_stark_balances(session, address):
     url = f"https://voyager.online/api/contract/{address}/balances"
-    async with session.get(url) as res:
-        data = await res.json()        
 
-        eth = round(float(data["ethereum"]["amount"]), RATIO) if "ethereum" in data else 0.
-        usdc = round(float(data["usd-coin"]["amount"]), RATIO) if "usd-coin" in data else 0.
-        usdt = round(float(data["tether"]["amount"]), RATIO) if "tether" in data else 0.
-        dai = round(float(data["dai"]["amount"]), RATIO) if "dai" in data else 0.
+    try:
+        async with session.get(url) as res:
+            data = await res.json()        
+
+            eth = round(float(data["ethereum"]["amount"]), RATIO) if "ethereum" in data else 0.
+            usdc = round(float(data["usd-coin"]["amount"]), RATIO) if "usd-coin" in data else 0.
+            usdt = round(float(data["tether"]["amount"]), RATIO) if "tether" in data else 0.
+            dai = round(float(data["dai"]["amount"]), RATIO) if "dai" in data else 0.
+    except Exception as e:
+        return 0., 0., 0., 0.
 
     return eth, usdc, usdt, dai
 
